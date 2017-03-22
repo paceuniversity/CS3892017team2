@@ -5,12 +5,38 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/scroll3"
-    tools:context="com.example.shirley.demo1.Map">
+    tools:context="com.example.shirley.demo1.Train">
 
+
+    <EditText
+        android:id="@+id/editText5"
+        android:layout_width="48dp"
+        android:layout_height="38dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/imageView7"
+        app:layout_constraintHorizontal_bias="0.214"
+        app:layout_constraintBottom_toTopOf="@+id/navbar"
+        app:layout_constraintTop_toBottomOf="@+id/items"
+        app:layout_constraintVertical_bias="0.66" />
+
+    <EditText
+        android:id="@+id/editText4"
+        android:layout_width="48dp"
+        android:layout_height="38dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/navbar"
+        app:layout_constraintTop_toBottomOf="@+id/editText5"
+        app:layout_constraintVertical_bias="0.214"
+        app:layout_constraintHorizontal_bias="0.474" />
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/navbar"
-        android:layout_width="383dp"
+        android:layout_width="0dp"
         android:layout_height="38dp"
         android:background="@color/red"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -83,7 +109,7 @@
 
     <RelativeLayout
         android:id="@+id/items"
-        android:layout_width="383dp"
+        android:layout_width="0dp"
         android:layout_height="36dp"
         android:background="@color/red"
 
@@ -204,13 +230,137 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/train"
+        android:text="@string/troop"
+        android:textSize="20dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/navbar"
+        app:layout_constraintHorizontal_bias="0.193"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/items"
-        app:layout_constraintVertical_bias="0.236"
+        app:layout_constraintVertical_bias="0.177" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="66dp"
+        android:layout_height="54dp"
+        app:srcCompat="@drawable/archer"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="0.226" />
+        app:layout_constraintHorizontal_bias="0.163"
+        app:layout_constraintBottom_toTopOf="@+id/navbar"
+        app:layout_constraintTop_toBottomOf="@+id/items"
+        app:layout_constraintVertical_bias="0.284" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="52dp"
+        android:layout_height="45dp"
+        app:srcCompat="@drawable/cavalry"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/navbar"
+        app:layout_constraintTop_toBottomOf="@+id/imageView6"
+        app:layout_constraintVertical_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.183" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="53dp"
+        android:layout_height="77dp"
+        app:srcCompat="@drawable/swordman"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.178"
+        app:layout_constraintBottom_toTopOf="@+id/navbar"
+        app:layout_constraintTop_toBottomOf="@+id/items"
+        app:layout_constraintVertical_bias="0.454" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="56dp"
+        android:layout_height="69dp"
+        app:srcCompat="@drawable/spear"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.17"
+        app:layout_constraintBottom_toTopOf="@+id/navbar"
+        app:layout_constraintTop_toBottomOf="@+id/imageView6"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="48dp"
+        android:layout_height="0dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintLeft_toRightOf="@+id/imageView6"
+        app:layout_constraintBottom_toTopOf="@+id/navbar"
+        android:layout_marginBottom="213dp"
+        app:layout_constraintRight_toLeftOf="@+id/button3"
+        app:layout_constraintHorizontal_bias="0.705"
+        android:layout_marginRight="5dp"
+        android:layout_marginEnd="5dp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/train"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/navbar"
+        app:layout_constraintTop_toBottomOf="@+id/items"
+        app:layout_constraintVertical_bias="0.829"
+        android:layout_marginRight="63dp"
+        android:layout_marginEnd="63dp" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/train"
+        app:layout_constraintBottom_toTopOf="@+id/navbar"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/items"
+        app:layout_constraintVertical_bias="0.652"
+        android:layout_marginRight="63dp"
+        android:layout_marginEnd="63dp" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/train"
+        app:layout_constraintBottom_toTopOf="@+id/navbar"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/items"
+        app:layout_constraintVertical_bias="0.463"
+        android:layout_marginRight="63dp"
+        android:layout_marginEnd="63dp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/train"
+        app:layout_constraintBottom_toTopOf="@+id/navbar"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/items"
+        app:layout_constraintVertical_bias="0.28"
+        android:layout_marginRight="63dp"
+        android:layout_marginEnd="63dp" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="54dp"
+        android:layout_height="36dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintRight_toLeftOf="@+id/button2"
+        app:layout_constraintLeft_toRightOf="@+id/imageView2"
+        app:layout_constraintHorizontal_bias="0.688"
+        app:layout_constraintBottom_toTopOf="@+id/editText2"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
 
 </android.support.constraint.ConstraintLayout>

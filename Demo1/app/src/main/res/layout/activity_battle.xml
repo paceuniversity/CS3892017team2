@@ -5,12 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/scroll3"
-    tools:context="com.example.shirley.demo1.Map">
+    tools:context="com.example.shirley.demo1.Battle">
 
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/navbar"
-        android:layout_width="383dp"
+        android:layout_width="0dp"
         android:layout_height="38dp"
         android:background="@color/red"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -83,7 +83,7 @@
 
     <RelativeLayout
         android:id="@+id/items"
-        android:layout_width="383dp"
+        android:layout_width="0dp"
         android:layout_height="36dp"
         android:background="@color/red"
 
