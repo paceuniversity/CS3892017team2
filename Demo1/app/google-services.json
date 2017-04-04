@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "525777013800",
+    "firebase_url": "https://faxian-china.firebaseio.com",
+    "project_id": "faxian-china",
+    "storage_bucket": "faxian-china.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:525777013800:android:68d647b96f8dee02",
+        "android_client_info": {
+          "package_name": "com.example.shirley.demo1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "525777013800-s9rqas5el0h3reo39of0k3003ud180kv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.shirley.demo1",
+            "certificate_hash": "46bb4218243bbdc041042b2f0331dbc2dbebd4a3"
+          }
+        },
+        {
+          "client_id": "525777013800-l9295on9v245f88d6hctu02bkd7ftm3t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB23dToJWvlYoZZluKrjA7-8jSLXovVbJo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "525777013800-l9295on9v245f88d6hctu02bkd7ftm3t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

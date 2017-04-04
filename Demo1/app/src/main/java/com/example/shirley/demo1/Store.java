@@ -27,7 +27,7 @@ public class Store extends AppCompatActivity {
         });
     }
     public void init3(){
-        b4 = (ImageButton) findViewById(R.id.imageButton4);
+        b4 = (ImageButton) findViewById(R.id.imageButton3);
         b4.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
                 Intent intent = new Intent(Store.this,Battle.class);

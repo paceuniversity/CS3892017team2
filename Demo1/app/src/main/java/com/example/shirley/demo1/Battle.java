@@ -28,7 +28,7 @@ public class Battle extends AppCompatActivity {
         });
     }
     public void init3(){
-        b4 = (ImageButton) findViewById(R.id.imageButton4);
+        b4 = (ImageButton) findViewById(R.id.imageButton);
         b4.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
                 Intent intent = new Intent(Battle.this,Battle.class);

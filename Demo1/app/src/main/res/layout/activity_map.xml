@@ -9,15 +9,20 @@
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="280dp"
+        android:layout_width="0dp"
         android:layout_height="343dp"
         app:srcCompat="@drawable/china"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/items"
-        app:layout_constraintVertical_bias="0.295"
+        app:layout_constraintVertical_bias="0.366"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:contentDescription="" />
+        android:contentDescription=""
+        tools:layout_constraintRight_creator="1"
+        android:layout_marginStart="52dp"
+        android:layout_marginEnd="52dp"
+        tools:layout_constraintLeft_creator="1"
+        app:layout_constraintHorizontal_bias="0.384" />
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/navbar"
@@ -28,30 +33,33 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="0dp">
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintLeft_creator="1">
 
     </android.support.constraint.ConstraintLayout>
 
     <ImageButton
         android:id="@+id/imageButton4"
         android:layout_width="66dp"
-        android:layout_height="45dp"
+        android:layout_height="0dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.2"
         app:layout_constraintLeft_toRightOf="@+id/navbar"
         app:layout_constraintRight_toLeftOf="@+id/navbar"
-        app:layout_constraintTop_toBottomOf="@+id/navbar"
         app:layout_constraintVertical_bias="0.844"
         app:srcCompat="@drawable/orangebutton"
         android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp" />
+        android:layout_marginEnd="15dp"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintTop_toTopOf="@+id/navbar" />
 
     <ImageButton
         android:id="@+id/imageButton3"
         android:layout_width="66dp"
-        android:layout_height="45dp"
+        android:layout_height="0dp"
         android:layout_marginEnd="15dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
@@ -60,9 +68,11 @@
         app:layout_constraintHorizontal_bias="0.398"
         app:layout_constraintLeft_toRightOf="@+id/navbar"
         app:layout_constraintRight_toLeftOf="@+id/navbar"
-        app:layout_constraintTop_toBottomOf="@+id/navbar"
         app:layout_constraintVertical_bias="0.844"
-        app:srcCompat="@drawable/orangebutton" />
+        app:srcCompat="@drawable/orangebutton"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintTop_toTopOf="@+id/navbar" />
 
     <ImageButton
         android:id="@+id/imageButton2"
@@ -83,14 +93,14 @@
         android:id="@+id/imageButton1"
         android:layout_width="64dp"
         android:layout_height="38dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.809"
         app:layout_constraintLeft_toRightOf="@+id/navbar"
         app:layout_constraintRight_toLeftOf="@+id/navbar"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/orangebutton"
-        android:layout_marginLeft="15dp"
-        android:layout_marginStart="15dp" />
+        app:srcCompat="@drawable/orangebutton" />
 
     <RelativeLayout
         android:id="@+id/items"
@@ -103,7 +113,9 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.002">
+        app:layout_constraintVertical_bias="0.002"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintLeft_creator="1">
 
         <ImageView
             android:id="@+id/imageView"
@@ -151,16 +163,17 @@
         android:layout_height="19dp"
         android:text="@string/map"
         android:textSize="16sp"
-        app:layout_constraintBottom_toTopOf="@+id/navbar"
         app:layout_constraintHorizontal_bias="0.817"
         app:layout_constraintLeft_toRightOf="@+id/navbar"
         app:layout_constraintRight_toLeftOf="@+id/navbar"
-        app:layout_constraintTop_toBottomOf="@+id/navbar"
         app:layout_constraintVertical_bias="0.438"
         tools:textStyle="bold"
-        android:layout_marginBottom="4dp"
         android:layout_marginRight="3dp"
-        android:layout_marginEnd="3dp" />
+        android:layout_marginEnd="3dp"
+        tools:layout_constraintTop_creator="1"
+        tools:layout_constraintBottom_creator="1"
+        app:layout_constraintBottom_toBottomOf="@+id/navbar"
+        app:layout_constraintTop_toTopOf="@+id/navbar" />
 
     <TextView
         android:id="@+id/train"
@@ -211,7 +224,20 @@
         android:layout_marginRight="9dp"
         android:layout_marginEnd="9dp" />
 
-
+    <Button
+        android:id="@+id/battle1"
+        android:layout_width="88dp"
+        android:layout_height="53dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginRight="36dp"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="@+id/imageView4"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.548"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1" />
 
 
 </android.support.constraint.ConstraintLayout>
