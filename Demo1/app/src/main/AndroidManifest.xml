@@ -58,14 +58,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".HanBattle1"  android:theme="@style/AppTheme">
+        <activity android:name=".History" />
+        <activity android:name=".Setting">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
+        <activity android:name=".Timeline" />
+        <activity android:name=".Luoyang" />
+        <activity android:name=".Changsha" />
+        <activity android:name=".Linzi" />
+        <activity android:name=".Chengdu" />
+        <activity android:name=".Taiyuan"></activity>
     </application>
 
 </manifest>

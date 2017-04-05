@@ -13,8 +13,9 @@ import android.widget.PopupWindow;
 public class Map extends AppCompatActivity {
 
     private PopupWindow pop;
-    ImageButton b2, b3, b4, b5;
-    Button battle1;
+    ImageButton b2, b3, b4, b5, b6;
+    ImageButton c1,c2,c3,c4,c5;
+
     public void init(){
         b2 = (ImageButton) findViewById(R.id.map_navbar);
         b2.setOnClickListener(new View.OnClickListener(){
@@ -34,10 +35,10 @@ public class Map extends AppCompatActivity {
         });
     }
     public void init3(){
-        b4 = (ImageButton) findViewById(R.id.battle_navbar);
+        b4 = (ImageButton) findViewById(R.id.history_navbar);
         b4.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
-                Intent intent = new Intent(Map.this,Battle.class);
+                Intent intent = new Intent(Map.this,History.class);
                 startActivity(intent);
             }
         });
@@ -52,31 +53,85 @@ public class Map extends AppCompatActivity {
         });
     }
     public void init5() {
-        battle1 = (Button) findViewById(R.id.battle1);
-        battle1.setOnClickListener(new View.OnClickListener(){
+        b6 = (ImageButton) findViewById(R.id.setting_navbar);
+        b6.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
-                LayoutInflater inflater = (LayoutInflater) getBaseContext().getSystemService(LAYOUT_INFLATER_SERVICE);
-                View customView = inflater.inflate(R.layout.activity_han_battle1, null);
-                pop = new PopupWindow(
-                        customView,
-                        LinearLayout.LayoutParams.WRAP_CONTENT,
-                        LinearLayout.LayoutParams.WRAP_CONTENT
-
-                );
-                pop.showAsDropDown(battle1, 50, -30);
+                Intent intent = new Intent(Map.this,Setting.class);
+                startActivity(intent);
             }
         });
     }
+    public void city1() {
+        c1 = (ImageButton) findViewById(R.id.Changan);
+        c1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                setContentView(R.layout.activity_battle);
+
+            }
+        });
+    }
+    public void city2() {
+        c2 = (ImageButton) findViewById(R.id.Changsha);
+        c2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                setContentView(R.layout.activity_changsha);
+
+            }
+        });
+    }
+    public void city3() {
+        c3 = (ImageButton) findViewById(R.id.Luoyang);
+        c3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                setContentView(R.layout.activity_luoyang);
+
+            }
+        });
+    }
+    public void city4() {
+        c4 = (ImageButton) findViewById(R.id.Chengdu);
+        c4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                setContentView(R.layout.activity_chengdu);
+
+            }
+        });
+    }
+    public void city5() {
+        c5 = (ImageButton) findViewById(R.id.Linzi);
+        c5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                setContentView(R.layout.activity_linzi);
+
+            }
+        });
+    }
+    public void city6() {
+        c1 = (ImageButton) findViewById(R.id.Taiyuan);
+        c1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                setContentView(R.layout.activity_taiyuan);
+
+            }
+        });
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
-        init();
-        init2();
-        init3();
-        init4();
-        init5();
-
+        init();init2();init3();init4();init5();
+        city1();city2();city3();city4();city5();city6();
     }
 }

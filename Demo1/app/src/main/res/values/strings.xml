@@ -20,5 +20,11 @@
     <string name="map">Map</string>
     <string name="menu">Battle</string>
     <string name="buy">Buy</string>
-    <string name="troop">Train Troops</string>
+    <string name="traintitle">Training</string>
+    <string name="luoyang">Battle of Luoyang</string>
+    <string name="chengdu">Battle of Chengdu</string>
+    <string name="changsha">Battle of Changsha</string>
+    <string name="linzi">Battle of Linzi</string>
+    <string name="taiyuan">Battle of Taiyuan</string>
+    <string name="changan">Battle of Changan</string>
 </resources>

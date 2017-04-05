@@ -5,16 +5,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.TextView;
 
-public class Battle extends AppCompatActivity {
+public class Taiyuan extends AppCompatActivity {
 
     ImageButton b2, b3, b4, b5, b6;
     public void init(){
         b2 = (ImageButton) findViewById(R.id.map_navbar);
         b2.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
-                Intent intent = new Intent(Battle.this,Map.class);
+                Intent intent = new Intent(Taiyuan.this,Map.class);
                 startActivity(intent);
             }
         });
@@ -23,7 +22,7 @@ public class Battle extends AppCompatActivity {
         b3 = (ImageButton) findViewById(R.id.train_navbar);
         b3.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
-                Intent intent = new Intent(Battle.this,Train.class);
+                Intent intent = new Intent(Taiyuan.this,Train.class);
                 startActivity(intent);
             }
         });
@@ -32,7 +31,7 @@ public class Battle extends AppCompatActivity {
         b4 = (ImageButton) findViewById(R.id.history_navbar);
         b4.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
-                Intent intent = new Intent(Battle.this,History.class);
+                Intent intent = new Intent(Taiyuan.this,History.class);
                 startActivity(intent);
             }
         });
@@ -41,7 +40,7 @@ public class Battle extends AppCompatActivity {
         b5 = (ImageButton) findViewById(R.id.market_navbar);
         b5.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
-                Intent intent = new Intent(Battle.this,Store.class);
+                Intent intent = new Intent(Taiyuan.this,Store.class);
                 startActivity(intent);
             }
         });
@@ -50,23 +49,14 @@ public class Battle extends AppCompatActivity {
         b6 = (ImageButton) findViewById(R.id.setting_navbar);
         b6.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
-                Intent intent = new Intent(Battle.this,Setting.class);
+                Intent intent = new Intent(Taiyuan.this,Setting.class);
                 startActivity(intent);
             }
         });
-    }
-
-    @Override
+    }  @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_battle);
-        init();
-        init2();
-        init3();
-        init4();
-        init5();
-        TextView textView = (TextView) findViewById(R.id.dummy);
-        textView.setText("Battle of Taiyun");
-
+        setContentView(R.layout.activity_taiyuan);
+        init();init2();init3();init4();init5();
     }
 }

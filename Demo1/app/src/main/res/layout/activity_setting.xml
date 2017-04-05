@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/scroll3"
-    tools:context="com.example.shirley.demo1.Map">
+    tools:context="com.example.shirley.demo1.Setting">
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/navbar"
@@ -22,27 +22,26 @@
     </android.support.constraint.ConstraintLayout>
 
 
-
     <ImageButton
         android:id="@+id/market_navbar"
-        android:layout_width="56dp"
-        android:layout_height="38dp"
+        android:layout_width="66dp"
+        android:layout_height="45dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.293"
+        app:layout_constraintHorizontal_bias="0.345"
         app:layout_constraintLeft_toRightOf="@+id/navbar"
         app:layout_constraintRight_toLeftOf="@+id/navbar"
         app:layout_constraintTop_toBottomOf="@+id/navbar"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.844"
         app:srcCompat="@drawable/marketbutton"
         android:layout_marginStart="15dp"
         android:layout_marginEnd="15dp" />
 
     <ImageButton
         android:id="@+id/history_navbar"
-        android:layout_width="56dp"
-        android:layout_height="38dp"
+        android:layout_width="66dp"
+        android:layout_height="45dp"
         android:layout_marginEnd="15dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
@@ -51,13 +50,12 @@
         app:layout_constraintLeft_toRightOf="@+id/navbar"
         app:layout_constraintRight_toLeftOf="@+id/navbar"
         app:layout_constraintTop_toBottomOf="@+id/navbar"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/orangebutton"
-        app:layout_constraintHorizontal_bias="0.427" />
+        app:layout_constraintVertical_bias="0.844"
+        app:srcCompat="@drawable/orangebutton" />
     <ImageButton
         android:id="@+id/setting_navbar"
-        android:layout_width="56dp"
-        android:layout_height="38dp"
+        android:layout_width="66dp"
+        android:layout_height="45dp"
         android:layout_marginEnd="15dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
@@ -66,48 +64,38 @@
         app:layout_constraintLeft_toRightOf="@+id/navbar"
         app:layout_constraintRight_toLeftOf="@+id/navbar"
         app:layout_constraintTop_toBottomOf="@+id/navbar"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.844"
         app:srcCompat="@drawable/settingbutton"
-        app:layout_constraintHorizontal_bias="0.164" />
+        app:layout_constraintHorizontal_bias="0.189" />
 
     <ImageButton
         android:id="@+id/train_navbar"
-        android:layout_width="56dp"
+        android:layout_width="65dp"
         android:layout_height="38dp"
         android:layout_marginEnd="15dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:layout_marginStart="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.563"
+        app:layout_constraintHorizontal_bias="0.665"
         app:layout_constraintLeft_toRightOf="@+id/navbar"
         app:layout_constraintRight_toLeftOf="@+id/navbar"
-        app:srcCompat="@drawable/trainbutton" />
+        app:srcCompat="@drawable/trainbutton"
+        android:layout_marginBottom="0dp" />
 
     <ImageButton
         android:id="@+id/map_navbar"
-        android:layout_width="56dp"
+        android:layout_width="64dp"
         android:layout_height="38dp"
         android:layout_marginLeft="15dp"
         android:layout_marginStart="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.722"
+        app:layout_constraintHorizontal_bias="0.846"
         app:layout_constraintLeft_toRightOf="@+id/navbar"
         app:layout_constraintRight_toLeftOf="@+id/navbar"
-        app:srcCompat="@drawable/map" />
+        app:srcCompat="@drawable/map"
+        android:layout_marginBottom="0dp" />
 
-
-    <ImageButton
-        android:id="@+id/timeline"
-        android:layout_width="56dp"
-        android:layout_height="38dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginStart="15dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.856"
-        app:layout_constraintLeft_toRightOf="@+id/navbar"
-        app:layout_constraintRight_toLeftOf="@+id/navbar"
-        app:srcCompat="@drawable/map" />
 
     <RelativeLayout
         android:id="@+id/items"
@@ -163,85 +151,6 @@
             android:textSize="28sp" />
 
     </RelativeLayout>
-
-    <ImageView
-        android:id="@+id/hanmap"
-        android:layout_width="312dp"
-        android:layout_height="509dp"
-        app:layout_constraintBottom_toTopOf="@+id/navbar"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/items"
-        app:layout_constraintVertical_bias="0.287"
-        app:srcCompat="@drawable/hanmap" />
-
-    <ImageButton
-        android:id="@+id/Luoyang"
-        android:layout_width="32dp"
-        android:layout_height="23dp"
-        app:layout_constraintBottom_toTopOf="@+id/hanmap"
-        app:layout_constraintLeft_toRightOf="@+id/hanmap"
-        app:layout_constraintRight_toLeftOf="@+id/hanmap"
-        app:layout_constraintTop_toBottomOf="@+id/hanmap"
-        app:layout_constraintVertical_bias="0.543"
-        app:srcCompat="@drawable/cityicon2" />
-
-    <ImageButton
-        android:id="@+id/Changan"
-        android:layout_width="32dp"
-        android:layout_height="23dp"
-        app:srcCompat="@drawable/cityicon2"
-        app:layout_constraintRight_toLeftOf="@+id/hanmap"
-        app:layout_constraintLeft_toRightOf="@+id/hanmap"
-        app:layout_constraintBottom_toTopOf="@+id/hanmap"
-        app:layout_constraintTop_toBottomOf="@+id/hanmap" />
-
-    <ImageButton
-        android:id="@+id/Changsha"
-        android:layout_width="32dp"
-        android:layout_height="23dp"
-        app:layout_constraintBottom_toTopOf="@+id/hanmap"
-        app:layout_constraintHorizontal_bias="0.456"
-        app:layout_constraintLeft_toRightOf="@+id/hanmap"
-        app:layout_constraintRight_toLeftOf="@+id/hanmap"
-        app:layout_constraintTop_toBottomOf="@+id/hanmap"
-        app:layout_constraintVertical_bias="0.437"
-        app:srcCompat="@drawable/cityicon2" />
-
-    <ImageButton
-        android:id="@+id/Chengdu"
-        android:layout_width="32dp"
-        android:layout_height="23dp"
-        app:layout_constraintBottom_toTopOf="@+id/hanmap"
-        app:layout_constraintHorizontal_bias="0.642"
-        app:layout_constraintLeft_toRightOf="@+id/hanmap"
-        app:layout_constraintRight_toLeftOf="@+id/hanmap"
-        app:layout_constraintTop_toBottomOf="@+id/hanmap"
-        app:layout_constraintVertical_bias="0.479"
-        app:srcCompat="@drawable/cityicon2" />
-
-    <ImageButton
-        android:id="@+id/Taiyuan"
-        android:layout_width="32dp"
-        android:layout_height="23dp"
-        app:layout_constraintBottom_toTopOf="@+id/hanmap"
-        app:layout_constraintLeft_toRightOf="@+id/hanmap"
-        app:layout_constraintRight_toLeftOf="@+id/hanmap"
-        app:layout_constraintTop_toBottomOf="@+id/hanmap"
-        app:layout_constraintVertical_bias="0.601"
-        app:srcCompat="@drawable/cityicon2" />
-
-    <ImageButton
-        android:id="@+id/Linzi"
-        android:layout_width="32dp"
-        android:layout_height="23dp"
-        app:layout_constraintBottom_toTopOf="@+id/hanmap"
-        app:layout_constraintLeft_toRightOf="@+id/hanmap"
-        app:layout_constraintRight_toLeftOf="@+id/hanmap"
-        app:layout_constraintTop_toBottomOf="@+id/hanmap"
-        app:layout_constraintVertical_bias="0.612"
-        app:srcCompat="@drawable/cityicon2"
-        app:layout_constraintHorizontal_bias="0.343" />
 
 
 </android.support.constraint.ConstraintLayout>

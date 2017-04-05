@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.ImageButton;
 
 public class Store extends AppCompatActivity {
-    ImageButton b2, b3, b4, b5;
+    ImageButton b2, b3, b4, b5, b6;
     public void init(){
         b2 = (ImageButton) findViewById(R.id.map_navbar);
         b2.setOnClickListener(new View.OnClickListener(){
@@ -27,7 +27,7 @@ public class Store extends AppCompatActivity {
         });
     }
     public void init3(){
-        b4 = (ImageButton) findViewById(R.id.battle_navbar);
+        b4 = (ImageButton) findViewById(R.id.history_navbar);
         b4.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
                 Intent intent = new Intent(Store.this,Battle.class);
@@ -44,6 +44,15 @@ public class Store extends AppCompatActivity {
             }
         });
     }
+    public void init5() {
+        b6 = (ImageButton) findViewById(R.id.setting_navbar);
+        b6.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v) {
+                Intent intent = new Intent(Store.this,Setting.class);
+                startActivity(intent);
+            }
+        });
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +61,7 @@ public class Store extends AppCompatActivity {
         init2();
         init3();
         init4();
+        init5();
     }
 
 }
