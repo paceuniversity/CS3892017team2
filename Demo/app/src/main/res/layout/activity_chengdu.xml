@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/scroll3"
+    tools:context="com.example.shirley.demo1.Chengdu">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/navbar"
+        android:layout_width="0dp"
+        android:layout_height="38dp"
+        android:background="@color/red"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        android:layout_marginBottom="1dp">
+
+    </android.support.constraint.ConstraintLayout>
+
+
+    <ImageButton
+        android:id="@+id/market_navbar"
+        android:layout_width="56dp"
+        android:layout_height="38dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.292"
+        app:layout_constraintLeft_toRightOf="@+id/navbar"
+        app:layout_constraintRight_toLeftOf="@+id/navbar"
+        app:layout_constraintTop_toBottomOf="@+id/navbar"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/marketbutton"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="1dp" />
+
+    <ImageButton
+        android:id="@+id/history_navbar"
+        android:layout_width="56dp"
+        android:layout_height="38dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginStart="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/navbar"
+        app:layout_constraintRight_toLeftOf="@+id/navbar"
+        app:layout_constraintTop_toBottomOf="@+id/navbar"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/orangebutton"
+        app:layout_constraintHorizontal_bias="0.429"
+        android:layout_marginBottom="1dp" />
+    <ImageButton
+        android:id="@+id/setting_navbar"
+        android:layout_width="56dp"
+        android:layout_height="38dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginStart="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/navbar"
+        app:layout_constraintRight_toLeftOf="@+id/navbar"
+        app:layout_constraintTop_toBottomOf="@+id/navbar"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/settingbutton"
+        app:layout_constraintHorizontal_bias="0.163"
+        android:layout_marginBottom="1dp" />
+
+    <ImageButton
+        android:id="@+id/train_navbar"
+        android:layout_width="56dp"
+        android:layout_height="38dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginStart="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.568"
+        app:layout_constraintLeft_toRightOf="@+id/navbar"
+        app:layout_constraintRight_toLeftOf="@+id/navbar"
+        app:srcCompat="@drawable/trainbutton"
+        android:layout_marginBottom="1dp" />
+
+    <ImageButton
+        android:id="@+id/map_navbar"
+        android:layout_width="56dp"
+        android:layout_height="38dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginStart="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.722"
+        app:layout_constraintLeft_toRightOf="@+id/navbar"
+        app:layout_constraintRight_toLeftOf="@+id/navbar"
+        app:srcCompat="@drawable/map"
+        android:layout_marginBottom="1dp" />
+
+
+    <ImageButton
+        android:id="@+id/timeline"
+        android:layout_width="56dp"
+        android:layout_height="38dp"
+        android:layout_marginBottom="1dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginStart="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.856"
+        app:layout_constraintLeft_toRightOf="@+id/navbar"
+        app:layout_constraintRight_toLeftOf="@+id/navbar"
+        app:srcCompat="@drawable/map" />
+
+    <RelativeLayout
+        android:id="@+id/items"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:background="@color/red"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.002"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintLeft_creator="1">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="45dp"
+            android:layout_height="33dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="30dp"
+            app:srcCompat="@drawable/coin1" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="51dp"
+            android:layout_height="48dp"
+            android:layout_alignTop="@+id/imageView"
+            android:layout_marginStart="127dp"
+            android:layout_toEndOf="@+id/imageView"
+            app:srcCompat="@drawable/popu" />
+
+        <TextView
+            android:id="@+id/numofcoins"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="15dp"
+            android:layout_toEndOf="@+id/imageView"
+            android:text="@string/number"
+            android:textSize="28sp" />
+
+        <TextView
+            android:id="@+id/numofppl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="14dp"
+            android:layout_toEndOf="@+id/imageView3"
+            android:text="@string/number"
+            android:textSize="28sp" />
+
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/chengdu"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintBottom_toTopOf="@+id/navbar"
+        app:layout_constraintTop_toBottomOf="@+id/items"
+        app:layout_constraintVertical_bias="0.502" />
+
+</android.support.constraint.ConstraintLayout>
