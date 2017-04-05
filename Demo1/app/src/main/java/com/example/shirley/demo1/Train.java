@@ -9,7 +9,7 @@ import android.widget.ImageButton;
 public class Train extends AppCompatActivity {
     ImageButton b2, b3, b4, b5;
     public void init(){
-        b2 = (ImageButton) findViewById(R.id.imageButton1);
+        b2 = (ImageButton) findViewById(R.id.map_navbar);
         b2.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
                 Intent intent = new Intent(Train.this,Map.class);
@@ -18,7 +18,7 @@ public class Train extends AppCompatActivity {
         });
     }
     public void init2(){
-        b3 = (ImageButton) findViewById(R.id.imageButton2);
+        b3 = (ImageButton) findViewById(R.id.train_navbar);
         b3.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
                 Intent intent = new Intent(Train.this,Train.class);
@@ -27,7 +27,7 @@ public class Train extends AppCompatActivity {
         });
     }
     public void init3(){
-        b4 = (ImageButton) findViewById(R.id.imageButton3);
+        b4 = (ImageButton) findViewById(R.id.battle_navbar);
         b4.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
                 Intent intent = new Intent(Train.this,Battle.class);
@@ -36,7 +36,7 @@ public class Train extends AppCompatActivity {
         });
     }
     public void init4() {
-        b5 = (ImageButton) findViewById(R.id.imageButton4);
+        b5 = (ImageButton) findViewById(R.id.market_navbar);
         b5.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
                 Intent intent = new Intent(Train.this,Store.class);

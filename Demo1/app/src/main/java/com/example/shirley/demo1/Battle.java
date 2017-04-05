@@ -10,7 +10,7 @@ public class Battle extends AppCompatActivity {
 
     ImageButton b2, b3, b4, b5;
     public void init(){
-        b2 = (ImageButton) findViewById(R.id.imageButton1);
+        b2 = (ImageButton) findViewById(R.id.map_navbar);
         b2.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
                 Intent intent = new Intent(Battle.this,Map.class);
@@ -19,7 +19,7 @@ public class Battle extends AppCompatActivity {
         });
     }
     public void init2(){
-        b3 = (ImageButton) findViewById(R.id.imageButton2);
+        b3 = (ImageButton) findViewById(R.id.train_navbar);
         b3.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
                 Intent intent = new Intent(Battle.this,Train.class);
@@ -28,7 +28,7 @@ public class Battle extends AppCompatActivity {
         });
     }
     public void init3(){
-        b4 = (ImageButton) findViewById(R.id.imageButton);
+        b4 = (ImageButton) findViewById(R.id.battle_navbar);
         b4.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
                 Intent intent = new Intent(Battle.this,Battle.class);
@@ -37,7 +37,7 @@ public class Battle extends AppCompatActivity {
         });
     }
     public void init4() {
-        b5 = (ImageButton) findViewById(R.id.imageButton4);
+        b5 = (ImageButton) findViewById(R.id.market_navbar);
         b5.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
                 Intent intent = new Intent(Battle.this,Store.class);

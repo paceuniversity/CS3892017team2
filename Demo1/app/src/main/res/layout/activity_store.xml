@@ -62,7 +62,7 @@
     </android.support.constraint.ConstraintLayout>
 
     <ImageButton
-        android:id="@+id/imageButton4"
+        android:id="@+id/market_navbar"
         android:layout_width="66dp"
         android:layout_height="45dp"
         android:layout_marginLeft="15dp"
@@ -78,7 +78,7 @@
         android:layout_marginEnd="15dp" />
 
     <ImageButton
-        android:id="@+id/imageButton3"
+        android:id="@+id/battle_navbar"
         android:layout_width="66dp"
         android:layout_height="45dp"
         android:layout_marginEnd="15dp"
@@ -94,32 +94,32 @@
         app:srcCompat="@drawable/orangebutton" />
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/train_navbar"
         android:layout_width="65dp"
         android:layout_height="38dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginStart="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.598"
         app:layout_constraintLeft_toRightOf="@+id/navbar"
         app:layout_constraintRight_toLeftOf="@+id/navbar"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/orangebutton"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="15dp" />
+        app:srcCompat="@drawable/orangebutton" />
 
     <ImageButton
-        android:id="@+id/imageButton1"
+        android:id="@+id/map_navbar"
         android:layout_width="64dp"
         android:layout_height="38dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.809"
         app:layout_constraintLeft_toRightOf="@+id/navbar"
         app:layout_constraintRight_toLeftOf="@+id/navbar"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/orangebutton"
-        android:layout_marginLeft="15dp"
-        android:layout_marginStart="15dp" />
+        app:srcCompat="@drawable/orangebutton" />
 
     <RelativeLayout
         android:id="@+id/items"
@@ -198,11 +198,11 @@
         android:text="@string/train"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton4"
+        app:layout_constraintBottom_toTopOf="@+id/market_navbar"
         app:layout_constraintHorizontal_bias="0.613"
         app:layout_constraintLeft_toRightOf="@+id/navbar"
         app:layout_constraintRight_toLeftOf="@+id/navbar"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton4"
+        app:layout_constraintTop_toBottomOf="@+id/market_navbar"
         android:layout_marginBottom="3dp" />
 
     <TextView
@@ -212,11 +212,11 @@
         android:text="@string/menu"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton4"
+        app:layout_constraintBottom_toTopOf="@+id/market_navbar"
         app:layout_constraintHorizontal_bias="0.386"
         app:layout_constraintLeft_toRightOf="@+id/navbar"
         app:layout_constraintRight_toLeftOf="@+id/navbar"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton4"
+        app:layout_constraintTop_toBottomOf="@+id/market_navbar"
         android:layout_marginBottom="3dp"
         android:layout_marginLeft="3dp"
         android:layout_marginRight="2dp"
