@@ -13,11 +13,9 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
-    <string name="guest">Log in as Guest</string>
+    <string name="guest">Log in as guest</string>
     <string name="number">10,000</string>
-    <string name="train">Train</string>
-    <string name="market">Market</string>
-    <string name="map">Map</string>
-    <string name="menu">Battle</string>
-    <string name="buy">Buy</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
