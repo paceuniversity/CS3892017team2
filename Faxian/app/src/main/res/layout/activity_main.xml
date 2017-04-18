@@ -6,21 +6,20 @@
     android:background="@drawable/scroll3"
     tools:context=".MainActivity">
 
-    <FrameLayout
+    <android.support.constraint.ConstraintLayout
         android:id="@+id/framelayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="0">
 
+
         <android.support.design.widget.TabLayout
             android:id="@+id/tablayout"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
 
 
-            android:layout_gravity="bottom"
-
-            android:background="?attr/colorPrimary"
+            android:background="@color/red"
             android:minHeight="?attr/actionBarSize"
             app:tabBackground="@color/red"
             app:tabIndicatorColor="#FFB5B5"
@@ -28,32 +27,41 @@
             app:tabSelectedTextColor="#FFFFFF"
             app:tabTextColor="#000"
 
-            />
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/items"
+            app:layout_constraintVertical_bias="1.0" />
 
         <RelativeLayout
             android:id="@+id/items"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="36dp"
-            android:background="@color/red">
+            android:background="@color/red"
+            tools:layout_constraintTop_creator="1"
+            tools:layout_constraintRight_creator="1"
+            app:layout_constraintRight_toRightOf="parent"
+            tools:layout_constraintLeft_creator="1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
 
             <ImageView
-                android:id="@+id/imageView"
+                android:id="@+id/coins"
                 android:layout_width="45dp"
                 android:layout_height="33dp"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginStart="30dp"
-                app:srcCompat="@drawable/coins" />
+                android:layout_marginStart="30dp" />
 
             <ImageView
-                android:id="@+id/imageView3"
+                android:id="@+id/population"
                 android:layout_width="51dp"
                 android:layout_height="48dp"
-                android:layout_alignTop="@+id/imageView"
+                android:layout_alignTop="@+id/coins"
                 android:layout_marginStart="127dp"
-                android:layout_toEndOf="@+id/imageView"
-                app:srcCompat="@drawable/popu" />
+                android:layout_toEndOf="@+id/coins" />
 
             <TextView
                 android:id="@+id/numofcoins"
@@ -61,7 +69,7 @@
                 android:layout_height="wrap_content"
 
                 android:layout_marginStart="15dp"
-                android:layout_toEndOf="@+id/imageView"
+                android:layout_toEndOf="@+id/coins"
                 android:text="@string/number"
                 android:textSize="28sp" />
 
@@ -71,12 +79,14 @@
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginStart="14dp"
-                android:layout_toEndOf="@+id/imageView3"
+                android:layout_toEndOf="@+id/population"
                 android:text="@string/number"
                 android:textSize="28sp" />
 
+
         </RelativeLayout>
 
-    </FrameLayout>
+
+    </android.support.constraint.ConstraintLayout>
 
 </LinearLayout>
