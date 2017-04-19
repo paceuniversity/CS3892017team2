@@ -17,7 +17,7 @@ public class Frag_Timeline extends Fragment {
 
 
     private FirebaseStorage storage = FirebaseStorage.getInstance();
-    private StorageReference mapstorage;
+    private StorageReference timestorage;
 
     private ImageView tl;
 
@@ -28,13 +28,13 @@ public class Frag_Timeline extends Fragment {
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        mapstorage = storage.getReferenceFromUrl("gs://faxian-china.appspot.com/blanktimeline.png");
+        timestorage = storage.getReferenceFromUrl("gs://faxian-china.appspot.com/blanktimeline2.png");
 
 
         View v = inflater.inflate(R.layout.frag__timeline, container,false);
         tl = (ImageView)v.findViewById(R.id.timepic);
 
-        Glide.with(this).using(new FirebaseImageLoader()).load(mapstorage).into(tl);
+        Glide.with(this).using(new FirebaseImageLoader()).load(timestorage).into(tl);
 
         return v;
     }

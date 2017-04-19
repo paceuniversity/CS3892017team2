@@ -35,7 +35,7 @@ public class Frag_Map extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         mapstorage = storage.getReferenceFromUrl("gs://faxian-china.appspot.com/hanmap.png");
-        citystorage = storage.getReferenceFromUrl("gs://faxian-china.appspot.com/cityicon1.png");
+        citystorage = storage.getReferenceFromUrl("gs://faxian-china.appspot.com/cityicon3.png");
 
         View v = inflater.inflate(R.layout.frag__map, container,false);
         map = (ImageView)v.findViewById(R.id.map);

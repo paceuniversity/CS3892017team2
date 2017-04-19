@@ -59,14 +59,6 @@
       },
       "oauth_client": [
         {
-          "client_id": "525777013800-ienoeqkn46l2r1nkcuoldlgqvng4kash.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.faxianchina.faxian",
-            "certificate_hash": "46bb4218243bbdc041042b2f0331dbc2dbebd4a3"
-          }
-        },
-        {
           "client_id": "525777013800-l9295on9v245f88d6hctu02bkd7ftm3t.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -81,13 +73,8 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 2,
-          "other_platform_oauth_client": [
-            {
-              "client_id": "525777013800-l9295on9v245f88d6hctu02bkd7ftm3t.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "status": 1,
+          "other_platform_oauth_client": []
         },
         "ads_service": {
           "status": 2
