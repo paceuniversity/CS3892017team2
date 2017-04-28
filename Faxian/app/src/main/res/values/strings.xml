@@ -32,7 +32,10 @@ Monarchy
 
 Han Dynasty Description:
 The Han dynasty spread across four centuries from 206 BCE to 220 AD. The Han Dynasty was considered to be the golden age of China. The first emperor in the Han Dynasty was Emperor Gaozu of Han. In 9-23 AD, the dynasty was interrupted by the Xin dynasty. Due to this the Han dynasty was split up into to eras, Former Han from 206 BCE to 9 AD and Later Han from 25 AD to 220 AD. During this time period the dynasty had 3 capitals, Cheng’an, Luoyang, and Xuchang. The Han dynasty saw significant growth in the money economy that was established during past dynasties. The currency used by the government was the same since the Zhou dynasty and remained that way until the Tang dynasty which started in 618 AD.
-    "</string>​
+    "</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>​
 
 
 </resources>

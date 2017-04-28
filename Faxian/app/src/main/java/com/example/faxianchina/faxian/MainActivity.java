@@ -17,12 +17,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.firebase.ui.storage.images.FirebaseImageLoader;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FileDownloadTask;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -36,15 +42,19 @@ public class MainActivity extends AppCompatActivity {
     private ConstraintLayout frame;
     private TabLayout tabLayout;
     private FirebaseStorage storage= FirebaseStorage.getInstance();
-    private StorageReference mStorageRef;
-    private StorageReference populstor;
-    private ImageView coinsImage;
-    private ImageView popuImage;
-
+    private StorageReference mStorageRef,populstor;
+    private ImageView coinsImage, popuImage;
+    private TextView coinNum, popNum;
+    private FirebaseDatabase database = FirebaseDatabase.getInstance();
+    private DatabaseReference mRef = database.getReference();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+
+
         setContentView(R.layout.activity_main);
         // Coins image
         coinsImage = (ImageView)findViewById(R.id.coins);
@@ -55,9 +65,9 @@ public class MainActivity extends AppCompatActivity {
         // Coins image
         coinsImage = (ImageView)findViewById(R.id.coins);
         popuImage = (ImageView)findViewById(R.id.population);
-
-
-        //download file
+        //coin and population text
+        coinNum = (TextView)findViewById(R.id.numofcoins);
+        popNum = (TextView)findViewById(R.id.numofppl);
 
         Glide.with(this).using(new FirebaseImageLoader()).load(mStorageRef).into(coinsImage);
         Glide.with(this).using(new FirebaseImageLoader()).load(populstor).into(popuImage);
@@ -65,8 +75,6 @@ public class MainActivity extends AppCompatActivity {
 // get the reference of FrameLayout and TabLayout
         frame = (ConstraintLayout) findViewById(R.id.framelayout);
         tabLayout = (TabLayout) findViewById(R.id.tablayout);
-
-
 
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -112,8 +120,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
-
         View view1 = getLayoutInflater().inflate(R.layout.iconlayout, null);
         view1.findViewById(R.id.icon).setBackgroundResource(R.drawable.timeline_button);
         tabLayout.addTab(tabLayout.newTab().setCustomView(view1),0,true);
@@ -126,7 +132,6 @@ public class MainActivity extends AppCompatActivity {
         View view3 = getLayoutInflater().inflate(R.layout.iconlayout, null);
         view3.findViewById(R.id.icon).setBackgroundResource(R.drawable.trainbutton);
         tabLayout.addTab(tabLayout.newTab().setCustomView(view3));
-
 
         TabLayout.Tab market = tabLayout.newTab();
         View view4 = getLayoutInflater().inflate(R.layout.iconlayout, null);
@@ -144,6 +149,23 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.addTab(tabLayout.newTab().setCustomView(view6));
         TabLayout.Tab tab = tabLayout.getTabAt(0);
         tab.select();
+        //update coin and population text
+        mRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String coinVal = dataSnapshot.child("Coins").child("totalCoins").getValue().toString();
+                coinNum.setText(coinVal);
+
+                String popVal = dataSnapshot.child("population").child("startPopulation").getValue().toString();
+                popNum.setText(popVal);
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                Toast toast = Toast.makeText(getApplicationContext(),"error",Toast.LENGTH_SHORT);
+            }
+        });
     }
 }
 

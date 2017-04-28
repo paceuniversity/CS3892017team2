@@ -21,6 +21,7 @@
         android:id="@+id/Changsha"
         android:layout_width="37dp"
         android:layout_height="32dp"
+        android:background="?android:selectableItemBackground"
         app:layout_constraintBottom_toTopOf="@+id/map"
         app:layout_constraintHorizontal_bias="0.474"
         app:layout_constraintLeft_toRightOf="@+id/map"

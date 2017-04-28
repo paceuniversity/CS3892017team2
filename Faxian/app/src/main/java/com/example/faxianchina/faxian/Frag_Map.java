@@ -2,6 +2,7 @@ package com.example.faxianchina.faxian;
 
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,6 +46,69 @@ public class Frag_Map extends Fragment {
         city4 = (ImageButton)v.findViewById(R.id.Linzi);
         city5 = (ImageButton)v.findViewById(R.id.Taiyuan);
         city6 = (ImageButton)v.findViewById(R.id.Changsha);
+
+
+        city1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment fm = new Luoyang();
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.replace(R.id.framelayout, fm);
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
+        });
+        city2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment fm = new Changan();
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.replace(R.id.framelayout, fm);
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
+        });
+        city3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment fm = new Chengdu();
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.replace(R.id.framelayout, fm);
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
+        });
+        city4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment fm = new Linzi();
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.replace(R.id.framelayout, fm);
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
+        });
+        city5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment fm = new Taiyuan();
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.replace(R.id.framelayout, fm);
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
+        });
+        city6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment fm = new Changsha();
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.replace(R.id.framelayout, fm);
+                transaction.addToBackStack(null);
+                transaction.commit();
+            }
+        });
+
 
         Glide.with(this).using(new FirebaseImageLoader()).load(mapstorage).into(map);
         Glide.with(this).using(new FirebaseImageLoader()).load(citystorage).into(city1);
