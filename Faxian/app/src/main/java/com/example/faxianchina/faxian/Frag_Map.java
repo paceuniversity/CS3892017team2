@@ -1,5 +1,6 @@
 package com.example.faxianchina.faxian;
 
+import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
@@ -35,8 +36,8 @@ public class Frag_Map extends Fragment {
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        mapstorage = storage.getReferenceFromUrl("gs://faxian-china.appspot.com/hanmap.png");
-        citystorage = storage.getReferenceFromUrl("gs://faxian-china.appspot.com/cityicon3.png");
+        mapstorage = storage.getReferenceFromUrl("gs://faxian-china.appspot.com/hanmap2.png");
+        citystorage = storage.getReferenceFromUrl("gs://faxian-china.appspot.com/cityicon.png");
 
         View v = inflater.inflate(R.layout.frag__map, container,false);
         map = (ImageView)v.findViewById(R.id.map);
@@ -45,8 +46,7 @@ public class Frag_Map extends Fragment {
         city3 = (ImageButton)v.findViewById(R.id.Chengdu);
         city4 = (ImageButton)v.findViewById(R.id.Linzi);
         city5 = (ImageButton)v.findViewById(R.id.Taiyuan);
-        city6 = (ImageButton)v.findViewById(R.id.Changsha);
-
+        city6 = (ImageButton)v.findViewById(R.id.Xuchang);
 
         city1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,14 +101,13 @@ public class Frag_Map extends Fragment {
         city6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Fragment fm = new Changsha();
+                Fragment fm = new Xuchang();
                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
                 transaction.replace(R.id.framelayout, fm);
                 transaction.addToBackStack(null);
                 transaction.commit();
             }
         });
-
 
         Glide.with(this).using(new FirebaseImageLoader()).load(mapstorage).into(map);
         Glide.with(this).using(new FirebaseImageLoader()).load(citystorage).into(city1);
@@ -117,6 +116,9 @@ public class Frag_Map extends Fragment {
         Glide.with(this).using(new FirebaseImageLoader()).load(citystorage).into(city4);
         Glide.with(this).using(new FirebaseImageLoader()).load(citystorage).into(city5);
         Glide.with(this).using(new FirebaseImageLoader()).load(citystorage).into(city6);
+
+
+
         return v;
     }
   //  @Override

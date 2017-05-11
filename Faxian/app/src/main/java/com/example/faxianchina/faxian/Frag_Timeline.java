@@ -28,7 +28,7 @@ public class Frag_Timeline extends Fragment {
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        timestorage = storage.getReferenceFromUrl("gs://faxian-china.appspot.com/blanktimeline2.png");
+        timestorage = storage.getReferenceFromUrl("gs://faxian-china.appspot.com/Timelinedone.png");
 
 
         View v = inflater.inflate(R.layout.frag__timeline, container,false);

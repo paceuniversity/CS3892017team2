@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/scroll4"
+    android:background="@drawable/scroll6"
     tools:context=".MainActivity">
 
     <android.support.constraint.ConstraintLayout
@@ -17,7 +17,10 @@
             android:id="@+id/tablayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-
+            app:tabPaddingStart="-1dp"
+            app:tabPaddingEnd="-1dp"
+            app:tabPaddingTop="-4dp"
+            app:tabPaddingBottom="-4dp"
 
             android:background="@color/red"
             android:minHeight="?attr/actionBarSize"
@@ -70,7 +73,7 @@
 
                 android:layout_marginStart="15dp"
                 android:layout_toEndOf="@+id/coins"
-                android:text="@string/number"
+
                 android:textSize="28sp" />
 
             <TextView
@@ -80,7 +83,6 @@
                 android:layout_centerVertical="true"
                 android:layout_marginStart="14dp"
                 android:layout_toEndOf="@+id/population"
-                android:text="@string/number"
                 android:textSize="28sp" />
 
 

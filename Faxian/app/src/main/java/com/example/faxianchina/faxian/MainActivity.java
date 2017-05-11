@@ -1,10 +1,13 @@
 package com.example.faxianchina.faxian;
 
+import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.media.Image;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.annotation.NonNull;
 import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.TabItem;
@@ -33,6 +36,9 @@ import com.google.firebase.storage.FileDownloadTask;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import android.media.MediaPlayer;
+
+import org.w3c.dom.Text;
 
 import java.io.File;
 import java.io.IOException;
@@ -42,32 +48,36 @@ public class MainActivity extends AppCompatActivity {
     private ConstraintLayout frame;
     private TabLayout tabLayout;
     private FirebaseStorage storage= FirebaseStorage.getInstance();
-    private StorageReference mStorageRef,populstor;
-    private ImageView coinsImage, popuImage;
+    private StorageReference mStorageRef,populstor, timelineIcon, mapIcon,trainIcon,marketIcon,historyIcon,settingsIcon;
+    private ImageView coinsImage;
+    private ImageView popuImage;
     private TextView coinNum, popNum;
+
     private FirebaseDatabase database = FirebaseDatabase.getInstance();
     private DatabaseReference mRef = database.getReference();
+    private MediaPlayer media;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
-
-
         setContentView(R.layout.activity_main);
         // Coins image
-        coinsImage = (ImageView)findViewById(R.id.coins);
-// firebase
+
+        coinNum = (TextView)findViewById(R.id.numofcoins);
+        popNum = (TextView)findViewById(R.id.numofppl);
+        // firebase
+        // coins and population firebase references
+
+
 
         mStorageRef = storage.getReferenceFromUrl("gs://faxian-china.appspot.com/coins_icon.png");
         populstor = storage.getReferenceFromUrl("gs://faxian-china.appspot.com/popu.png");
         // Coins image
         coinsImage = (ImageView)findViewById(R.id.coins);
         popuImage = (ImageView)findViewById(R.id.population);
-        //coin and population text
-        coinNum = (TextView)findViewById(R.id.numofcoins);
-        popNum = (TextView)findViewById(R.id.numofppl);
+
+
+        //download file
 
         Glide.with(this).using(new FirebaseImageLoader()).load(mStorageRef).into(coinsImage);
         Glide.with(this).using(new FirebaseImageLoader()).load(populstor).into(popuImage);
@@ -75,6 +85,8 @@ public class MainActivity extends AppCompatActivity {
 // get the reference of FrameLayout and TabLayout
         frame = (ConstraintLayout) findViewById(R.id.framelayout);
         tabLayout = (TabLayout) findViewById(R.id.tablayout);
+
+
 
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -84,29 +96,42 @@ public class MainActivity extends AppCompatActivity {
                 switch (tab.getPosition()) {
                     case 0:
                         fragment = new Frag_Timeline();
-
+                        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LOCKED);
                         break;
                     case 1:
                         fragment = new Frag_Map();
+                        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LOCKED);
 
                         break;
                     case 2:
                         fragment = new Frag_Train();
+                        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LOCKED);
+
                         break;
                     case 3:
                         fragment = new Frag_Market();
+                        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LOCKED);
+
                         break;
                     case 4:
                         fragment = new Frag_History();
+                        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LOCKED);
+
                         break;
                     case 5:
                         fragment = new Frag_Settings();
+                        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LOCKED);
+
                         break;
                 }
                 FragmentManager fm = getSupportFragmentManager();
                 FragmentTransaction ft = fm.beginTransaction();
                 ft.replace(R.id.framelayout, fragment);
-                ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+                for(int i = 0; i<=5;i++){
+                    tab.getPosition();
+                    ft.addToBackStack(null);
+                    ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+                }
                 ft.commit();
             }
 
@@ -120,10 +145,14 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        tabLayout.setTabGravity(TabLayout.GRAVITY_CENTER);
+
         View view1 = getLayoutInflater().inflate(R.layout.iconlayout, null);
         view1.findViewById(R.id.icon).setBackgroundResource(R.drawable.timeline_button);
         tabLayout.addTab(tabLayout.newTab().setCustomView(view1),0,true);
         TabLayout.Tab map = tabLayout.newTab();
+
         View view2 = getLayoutInflater().inflate(R.layout.iconlayout, null);
         view2.findViewById(R.id.icon).setBackgroundResource(R.drawable.map);
         tabLayout.addTab(tabLayout.newTab().setCustomView(view2));
@@ -132,6 +161,7 @@ public class MainActivity extends AppCompatActivity {
         View view3 = getLayoutInflater().inflate(R.layout.iconlayout, null);
         view3.findViewById(R.id.icon).setBackgroundResource(R.drawable.trainbutton);
         tabLayout.addTab(tabLayout.newTab().setCustomView(view3));
+
 
         TabLayout.Tab market = tabLayout.newTab();
         View view4 = getLayoutInflater().inflate(R.layout.iconlayout, null);
@@ -149,14 +179,15 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.addTab(tabLayout.newTab().setCustomView(view6));
         TabLayout.Tab tab = tabLayout.getTabAt(0);
         tab.select();
-        //update coin and population text
+
+
         mRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 String coinVal = dataSnapshot.child("Coins").child("totalCoins").getValue().toString();
                 coinNum.setText(coinVal);
 
-                String popVal = dataSnapshot.child("population").child("startPopulation").getValue().toString();
+                String popVal = dataSnapshot.child("population").child("currPopulation").getValue().toString();
                 popNum.setText(popVal);
 
             }
@@ -166,7 +197,11 @@ public class MainActivity extends AppCompatActivity {
                 Toast toast = Toast.makeText(getApplicationContext(),"error",Toast.LENGTH_SHORT);
             }
         });
+
     }
+
+
+
 }
 
 
