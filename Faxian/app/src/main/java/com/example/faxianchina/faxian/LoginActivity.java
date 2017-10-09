@@ -30,6 +30,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,7 +42,7 @@ import static android.Manifest.permission.READ_CONTACTS;
  * A login screen that offers login via email/password.
  */
 public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<Cursor> {
-
+    private FirebaseAuth anonUser = FirebaseAuth.getInstance();
     /**
      * Id to identity READ_CONTACTS permission request.
      */
@@ -62,6 +65,13 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private EditText mPasswordView;
     private View mProgressView;
     private View mLoginFormView;
+
+
+
+
+
+
+
     Button b1;
     public void init() {
         b1 = (Button) findViewById(R.id.guest);
@@ -72,10 +82,24 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             }
         });
     }
+
+//    @Override
+//    public void onStart() {
+//        super.onStart();
+//        // Check if user is signed in (non-null) and update UI accordingly.
+//        FirebaseUser currentUser = anonUser.getCurrentUser();
+//        updateUI(currentUser);
+//    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+
+
+
+
+
         // Set up the login form.
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
         populateAutoComplete();

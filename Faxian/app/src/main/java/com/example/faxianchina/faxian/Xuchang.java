@@ -21,8 +21,7 @@ import com.google.firebase.database.ValueEventListener;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Chengdu extends Fragment {
-
+public class Xuchang extends Fragment {
 
     private TextView userArchers,userSwordsmen,userSpearmen,userCavalry;//Textviews for user army
     private TextView oppArchers, oppSwordsmen,oppSpearmen,oppCavalry;//textviews for enemy army
@@ -30,23 +29,21 @@ public class Chengdu extends Fragment {
 
     private Button backButton, attackButton;
     private String userPower,cityPower;
-
     private String userLabel,oppLabel;//Labels
     private String enemyArchers, enemySwordsmen,enemySpearmen,enemyCavalry;//enemy army
     private String myArchers,mySwordsmen,mySpearmen,myCavalry;
     private FirebaseDatabase database = FirebaseDatabase.getInstance();
     private DatabaseReference mRef = database.getReference();
-    private Integer battleWon,battleFought,archerPower,swordsmenPower,spearmenPower,cavalryPower;
-    public Chengdu() {
+    private Integer battleWon,battleFought,highscore;
+    private Integer archerPower, swordsmenPower, spearmenPower, cavalryPower, newCityPower, newUserPower;
+    public Xuchang() {
         // Required empty public constructor
     }
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.frag_chengdu, container, false);
+        View v = inflater.inflate(R.layout.frag_xuchang, container, false);
         //buttons
         backButton = (Button)v.findViewById(R.id.back);
         attackButton = (Button)v.findViewById(R.id.attack);
@@ -55,7 +52,6 @@ public class Chengdu extends Fragment {
         userSwordsmen = (TextView)v.findViewById(R.id.yourSwordsmen);
         userSpearmen = (TextView)v.findViewById(R.id.yourSpearmen);
         userCavalry= (TextView)v.findViewById(R.id.yourCavalry);
-
 
 
         //Enemy army
@@ -77,10 +73,10 @@ public class Chengdu extends Fragment {
                 userLabel = dataSnapshot.child("Labels").child("userArmyLabel").getValue().toString();
                 oppLabel = dataSnapshot.child("Labels").child("enemyArmyLabel").getValue().toString();
                 //Get enemy army numbers
-                enemyArchers = dataSnapshot.child("Cities").child("Chengdu").child("troopCount").child("Archers").getValue().toString();
-                enemySwordsmen = dataSnapshot.child("Cities").child("Chengdu").child("troopCount").child("Swordsmen").getValue().toString();
-                enemySpearmen = dataSnapshot.child("Cities").child("Chengdu").child("troopCount").child("Spearmen").getValue().toString();
-                enemyCavalry = dataSnapshot.child("Cities").child("Chengdu").child("troopCount").child("Cavalry").getValue().toString();
+                enemyArchers = dataSnapshot.child("Cities").child("Xuchang").child("troopCount").child("Archers").getValue().toString();
+                enemySwordsmen = dataSnapshot.child("Cities").child("Xuchang").child("troopCount").child("Swordsmen").getValue().toString();
+                enemySpearmen = dataSnapshot.child("Cities").child("Xuchang").child("troopCount").child("Spearmen").getValue().toString();
+                enemyCavalry = dataSnapshot.child("Cities").child("Xuchang").child("troopCount").child("Cavalry").getValue().toString();
                 //Get your army numbers
                 myArchers = dataSnapshot.child("Market_soldiers").child("Archer").child("amountBoughtCum").getValue().toString();
                 mySwordsmen = dataSnapshot.child("Market_soldiers").child("Swordsmen").child("amountBoughtCum").getValue().toString();
@@ -112,6 +108,7 @@ public class Chengdu extends Fragment {
                 userSwordsmen.setText("Swordsmen: " + mySwordsmen);
                 userSpearmen.setText("Spearmen: " + mySpearmen);
                 userCavalry.setText("Cavalry: " + myCavalry);
+
             }
 
             @Override
@@ -125,8 +122,8 @@ public class Chengdu extends Fragment {
                 attackButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(final View v) {
-                        cityPower = dataSnapshot.child("Cities").child("Chengdu").child("cityPower").getValue().toString();
-                        Integer newCityPower = Integer.parseInt(cityPower);
+                        //cityPower = dataSnapshot.child("Cities").child("Xuchang").child("cityPower").getValue().toString();
+                        Integer newCityPower = 10850;
                         archerPower = (Integer.parseInt(dataSnapshot.child("Market_soldiers").child("Archer").child("amountBoughtCum").getValue().toString()))*
                                 (Integer.parseInt(dataSnapshot.child("Market_soldiers").child("Archer").child("offensive").getValue().toString()));
                         swordsmenPower = (Integer.parseInt(dataSnapshot.child("Market_soldiers").child("Swordsmen").child("amountBoughtCum").getValue().toString()))*
@@ -148,10 +145,10 @@ public class Chengdu extends Fragment {
                         int peopleKilled = 5;
 
                         //If won
-                        int moneyWon = 500;
+                        int moneyWon = 5000;
                         int peopleAcquired = 35;
                         final Toast toast;
-                        if (newUserPower > newCityPower) {
+                        if (newUserPower>newCityPower) {
                             mRef.child("Coins").child("totalCoins").setValue(money + moneyWon);
                             mRef.child("population").child("currPopulation").setValue(population + peopleAcquired);
                             toast = Toast.makeText(v.getContext().getApplicationContext(), "You won! Congratulations!\nYour population increased and you are promply rewarded\n+500 coins, +35 people", Toast.LENGTH_SHORT);
@@ -167,6 +164,16 @@ public class Chengdu extends Fragment {
                             mRef.child("Battles").child("battlesWon").setValue(battleWon + 1);
                             battleFought = Integer.parseInt(dataSnapshot.child("Battles").child("battlesFought").getValue().toString());
                             mRef.child("Battles").child("battlesFought").setValue(battleFought + 1);
+
+                            highscore = Integer.parseInt(dataSnapshot.child("Battles").child("battlesFought").getValue().toString());
+//
+                            if(highscore>battleFought||highscore<10000000){
+                                mRef.child("Battles").child("battleFought").setValue(highscore);
+                                mRef.child("Battles").child("highscore").setValue(highscore);
+                            }else{
+
+                            }
+
                         } else {
                             toast = Toast.makeText(v.getContext().getApplicationContext(), "You lost!\nYour army has been depleted and bank robbed", Toast.LENGTH_SHORT);
                             toast.show();
@@ -177,8 +184,8 @@ public class Chengdu extends Fragment {
                                     toast.cancel();
                                 }
                             }, 2000);
-                          mRef.child("Coins").child("totalCoins").setValue(money-moneyRobbed);
-                          mRef.child("population").child("currPopulation").setValue(population-peopleKilled);
+                            mRef.child("Coins").child("totalCoins").setValue(money-moneyRobbed);
+                            mRef.child("population").child("currPopulation").setValue(population-peopleKilled);
                             battleFought = Integer.parseInt(dataSnapshot.child("Battles").child("battlesFought").getValue().toString());
                             mRef.child("Battles").child("battlesFought").setValue(battleFought + 1);
                         }
@@ -192,8 +199,6 @@ public class Chengdu extends Fragment {
 
             }
         });
-
-
         return v;
     }
 
